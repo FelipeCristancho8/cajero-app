@@ -31,22 +31,20 @@ export default {
     init: function () {
       if (this.$route.name != "user") {
         let username = localStorage.getItem("current_username");
-        this.$router.push({ name: "user", params: { username: username } });
+        this.$router.push({ name: "user", params: { usuario: username } });
       }
     },
     getBalance: function () {
       if (this.$route.name != "user_balance") {
         let username = localStorage.getItem("current_username");
-        this.$router.push({
-          name: "user_balance",
-          params: { username: username },
-        });
+        this.$router.push({name: "user_balance", params: { username: username } });
       }
     },
-    beforeCreate: function () {
-      localStorage.setItem("current_username", "camilo24");
-      localStorage.setItem("isAuth", true);
-    },
+  },
+  beforeCreate: function () {
+    localStorage.setItem("current_username", "juan26");
+    localStorage.setItem("isAuth", true);
+    this.$router.push({name:"user",params:{usuario:'juan26'}})
   },
 };
 </script>
